@@ -8,8 +8,9 @@ import TodoList from "./components/TodoList";
 const Todo = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
-  console.log(todos);
 
+
+ 
   function todoHandler(e) {
     setTodo(e.target.value);
   }
@@ -36,7 +37,7 @@ const Todo = () => {
           Görev Ekle
         </Button>
       </div>
-      <TodoList  todos = {todos} />
+      <TodoList  todos = {todos} setTodos = {setTodos}  />
     
     </div>
   );

@@ -3,7 +3,7 @@ import Todo from './Todo';
 
 function App() {
   return (
-    <div className = "bg-slate-300 h-screen">
+    <div className = "bg-gradient-to-r from-cyan-500 to-blue-500  h-screen">
     <Todo />
     </div>
   );
