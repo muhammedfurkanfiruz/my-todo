@@ -4,12 +4,10 @@ import { Card } from "antd";
 import { EditFilled, DeleteFilled } from "@ant-design/icons";
 
 const List = ({ todos, setTodos }) => {
-  const deleteItem = (index) => {
-    todos.filter((_, i) => console.log(i, index));
-  };
-    
-  // const deleteItem = (index) => () =>
-  // setItems((items) => items.filter((_, i) => i !== index));
+ 
+  const deleteItem = (index) => () =>
+    setTodos((todos) => todos.filter((_, i) => i !== index));
+
   return (
     <div className="space-y-3 ">
       {todos.map((item, index) => (
