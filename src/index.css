@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 @import 'antd/dist/antd.css';
+
+
+.ant-btn { 
+border:none !important;
+
+}

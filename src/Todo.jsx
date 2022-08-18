@@ -6,13 +6,19 @@ import { useState, useEffect } from "react";
 import TodoList from "./components/TodoList";
 
 const Todo = () => {
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState({});
   const [todos, setTodos] = useState([]);
 
 
  
   function todoHandler(e) {
-    setTodo(e.target.value);
+    const newText = e.target.value;
+    const id = Math.floor(Math.random() * 100)
+
+    setTodo({
+      id: id,
+      text: newText
+    });
   }
   const todosHandler = () => {
     setTodos((prev) => [...prev, todo]);
@@ -30,14 +36,14 @@ const Todo = () => {
           placeholder="Görev Ekle..."
           onChange={todoHandler}
           onKeyUp={enterFeature}
-          value={todo}
+          value={todo.text}
           
         />
         <Button type="primary" danger className="" onClick={todosHandler}>
           Görev Ekle
         </Button>
       </div>
-      <TodoList  todos = {todos} setTodos = {setTodos}  />
+      <TodoList  todos = {todos} setTodos = {setTodos} todo = {todo} setTodo= {setTodo} />
     
     </div>
   );
